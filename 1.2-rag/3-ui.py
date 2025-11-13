@@ -65,17 +65,20 @@ def main():
         load_dotenv()
 
         index_name = os.getenv("PINECONE_INDEX_NAME")
+        
         if not index_name:
             raise ValueError(
                 "PINECONE_INDEX_NAME environment variable is not set.")
+        
         embeddings = create_embeddings()
+        
         if not embeddings:
             raise ValueError("Failed to create embeddings.")
 
         st.set_page_config(page_title="RAG CSAE Study", layout="wide")
         st.sidebar.title("RAG CSAE Study - Search")
 
-        st.title("RAG CSAE Study - UI")
+        st.title("RAG CASE Study - UI")
         st.write(
             "This application allows you to search for similar documents and summarize them using LLMs.")
 
